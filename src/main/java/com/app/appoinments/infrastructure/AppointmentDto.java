@@ -24,13 +24,22 @@ public class AppointmentDto {
 
     public AppointmentDto() {}
 
-    public AppointmentDto(Long id, String patientName, String doctorName, LocalDateTime appointmentDateTime, String status, String notes) {
-        this.id = id;
-        this.patientName = patientName;
-        this.doctorName = doctorName;
-        this.appointmentDateTime = appointmentDateTime;
+    public AppointmentDto(Long appointmentId, Long clientId, Long barberId, Long locationId, 
+                         Long serviceId, LocalDate appointmentDate, LocalTime startTime, 
+                         LocalTime endTime, BigDecimal price, String status, String notes) {
+        this.appointmentId = appointmentId;
+        this.clientId = clientId;
+        this.barberId = barberId;
+        this.locationId = locationId;
+        this.serviceId = serviceId;
+        this.appointmentDate = appointmentDate;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.price = price;
         this.status = status;
         this.notes = notes;
+        this.createdDate = LocalDateTime.now();
+        this.modifiedDate = LocalDateTime.now();
     }
 
     // Getters and Setters

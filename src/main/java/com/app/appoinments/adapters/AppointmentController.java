@@ -1,10 +1,11 @@
 package com.app.appoinments.adapters;
 
+import java.util.List;
+
 import com.app.appoinments.domain.IAppointmentService;
 import com.app.appoinments.domain.Appointment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/appointments")

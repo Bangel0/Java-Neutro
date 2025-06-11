@@ -1,11 +1,12 @@
 package com.app.appoinments.application;
 
+import java.util.List;
+
 import com.app.appoinments.domain.Appointment;
 import com.app.appoinments.domain.IAppointmentRepository;
 import com.app.appoinments.domain.IAppointmentService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.List;
 
 @Service
 public class AppointmentService implements IAppointmentService {
