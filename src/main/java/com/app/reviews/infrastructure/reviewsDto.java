@@ -1,70 +1,45 @@
-package com.app.appoinments.domain;
+package com.app.reviews.infrastructure;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-@Entity
-@Table(name = "appointments")
 @Data
-public class Appointment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "AppointmentId")
+public class reviewsDto {
     private Long appointmentId;
-
-    @Column(name = "ClientId", nullable = false)
     private Long clientId;
-
-    @Column(name = "BarberId", nullable = false)
     private Long barberId;
-
-    @Column(name = "LocationId", nullable = false)
     private Long locationId;
-
-    @Column(name = "ServiceId", nullable = false)
     private Long serviceId;
-
-    @Column(name = "AppointmentDate", nullable = false)
     private LocalDate appointmentDate;
-
-    @Column(name = "StartTime", nullable = false)
     private LocalTime startTime;
-
-    @Column(name = "EndTime", nullable = false)
     private LocalTime endTime;
-
-    @Column(name = "Price", nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
-
-    @Column(name = "Status", nullable = false)
-    private String status = "Scheduled";
-
-    @Column(name = "Notes")
+    private String status;
     private String notes;
+    private LocalDateTime createdDate;
+    private LocalDateTime modifiedDate;
 
-    @Column(name = "CreatedDate", nullable = false)
-    private LocalDateTime createdDate = LocalDateTime.now();
+    public reviewsDto() {}
 
-    @Column(name = "ModifiedDate", nullable = false)
-    private LocalDateTime modifiedDate = LocalDateTime.now();
-
-    // Empty constructor (required for JPA)
-    public Appointment() {}
-
-    // Constructor with parameters
-    public Appointment(Long id, String patientName, String doctorName, LocalDateTime appointmentDateTime, String status, String notes) {
-        this.appointmentId = id;
-        this.clientId = Long.parseLong(patientName);
-        this.barberId = Long.parseLong(doctorName);
-        this.appointmentDate = appointmentDateTime.toLocalDate();
-        this.startTime = appointmentDateTime.toLocalTime();
-        this.endTime = appointmentDateTime.plusHours(1).toLocalTime();
+    public reviewsDto(Long appointmentId, Long clientId, Long barberId, Long locationId, 
+                         Long serviceId, LocalDate appointmentDate, LocalTime startTime, 
+                         LocalTime endTime, BigDecimal price, String status, String notes) {
+        this.appointmentId = appointmentId;
+        this.clientId = clientId;
+        this.barberId = barberId;
+        this.locationId = locationId;
+        this.serviceId = serviceId;
+        this.appointmentDate = appointmentDate;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.price = price;
         this.status = status;
         this.notes = notes;
+        this.createdDate = LocalDateTime.now();
+        this.modifiedDate = LocalDateTime.now();
     }
 
     // Getters and Setters

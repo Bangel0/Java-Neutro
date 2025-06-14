@@ -1,4 +1,4 @@
-package com.app.appoinments.infrastructure;
+package com.app.services.infrastructure;
 
 import lombok.Data;
 import java.math.BigDecimal;
@@ -7,13 +7,13 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Data
-public class AppointmentDto {
-    private Long appointmentId;
+public class servicesDto {
+    private Long servicesId;
     private Long clientId;
     private Long barberId;
     private Long locationId;
     private Long serviceId;
-    private LocalDate appointmentDate;
+    private LocalDate servicesDate;
     private LocalTime startTime;
     private LocalTime endTime;
     private BigDecimal price;
@@ -22,17 +22,17 @@ public class AppointmentDto {
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
-    public AppointmentDto() {}
+    public servicesDto() {}
 
-    public AppointmentDto(Long appointmentId, Long clientId, Long barberId, Long locationId, 
-                         Long serviceId, LocalDate appointmentDate, LocalTime startTime, 
+    public servicesDto(Long servicesId, Long clientId, Long barberId, Long locationId, 
+                         Long serviceId, LocalDate servicesDate, LocalTime startTime, 
                          LocalTime endTime, BigDecimal price, String status, String notes) {
-        this.appointmentId = appointmentId;
+        this.servicesId = servicesId;
         this.clientId = clientId;
         this.barberId = barberId;
         this.locationId = locationId;
         this.serviceId = serviceId;
-        this.appointmentDate = appointmentDate;
+        this.servicesDate = servicesDate;
         this.startTime = startTime;
         this.endTime = endTime;
         this.price = price;
@@ -43,12 +43,12 @@ public class AppointmentDto {
     }
 
     // Getters and Setters
-    public Long getAppointmentId() {
-        return appointmentId;
+    public Long getservicesId() {
+        return servicesId;
     }
 
-    public void setAppointmentId(Long appointmentId) {
-        this.appointmentId = appointmentId;
+    public void setservicesId(Long servicesId) {
+        this.servicesId = servicesId;
     }
 
     public Long getClientId() {
@@ -83,12 +83,12 @@ public class AppointmentDto {
         this.serviceId = serviceId;
     }
 
-    public LocalDate getAppointmentDate() {
-        return appointmentDate;
+    public LocalDate getservicesDate() {
+        return servicesDate;
     }
 
-    public void setAppointmentDate(LocalDate appointmentDate) {
-        this.appointmentDate = appointmentDate;
+    public void setservicesDate(LocalDate servicesDate) {
+        this.servicesDate = servicesDate;
     }
 
     public LocalTime getStartTime() {
